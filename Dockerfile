@@ -4,13 +4,13 @@ USER root
 RUN rm test_requests.py && \
   apk add --no-cache ca-certificates wget gcc python3-dev musl-dev && \
   update-ca-certificates && \
-  wget https://pypi.python.org/packages/44/88/a86ba3fddb1fd7fc2c271355fc11e5f50634e30a0859ccc613fe62973a98/SQLAlchemy-1.1.2.tar.gz && \
-  tar xvzf SQLAlchemy-1.1.2.tar.gz && \
-  cd SQLAlchemy-1.1.2/ && \
+  wget https://pypi.python.org/packages/a7/8c/cc24b9794ffa87506aedf528ba3a236e11cc537f81a1e3b52193e5e948cd/SQLAlchemy-1.1.10.tar.gz && \
+  tar xvzf SQLAlchemy-1.1.10.tar.gz && \
+  cd SQLAlchemy-1.1.10/ && \
   python3 setup.py install && \
   cd - && \
-  rm -r SQLAlchemy-1.1.2/ && \
-  rm SQLAlchemy-1.1.2.tar.gz && \
+  rm -r SQLAlchemy-1.1.10/ && \
+  rm SQLAlchemy-1.1.10.tar.gz && \
   apk del --no-cache ca-certificates wget gcc python3-dev musl-dev
 ADD service/test_sqlalchemy.py .
 ENV FLASK_APP test_sqlalchemy.py
