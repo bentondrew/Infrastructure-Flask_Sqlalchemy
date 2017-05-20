@@ -1,4 +1,4 @@
-FROM drewantech/requests:1.0.2
+FROM drewantech/requests:1.1.0
 MAINTAINER Benton Drew <benton.s.drew@drewantech.com>
 USER root
 RUN rm test_requests.py && \
